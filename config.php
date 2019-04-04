@@ -18,7 +18,7 @@ class Config {
     const VERSAO = "1.0.0";
 
     // URL base para redirecionamentos, importações, etc
-    const URL_BASE = "http://localhost/kit-inicial-vrb";
+    const URL_BASE = "http://localhost/mediant";
     
     // Configuração de acesso a base de dados
     const BASE_SERVIDOR = "localhost";

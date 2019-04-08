@@ -6,7 +6,7 @@ Serv_Importacao::importar_modulos_php();
 /**
  * Componente de Status para exibição de Toastr
  */
-class Comp_Status implements Componente {
+class Comp_Status extends Componente {
     
     private $codigo = null;
     const LISTA_STATUS = [

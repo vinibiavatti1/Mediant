@@ -6,19 +6,39 @@ Serv_Importacao::importar_modulos_php();
 /**
  * Componente navbar de recursos
  */
-class Comp_Nav_Recursos implements Componente {
-    
+class Comp_Nav_Recursos extends Componente {
+
     public function __construct() {
         
+    }
+    
+    public function renderizar_estilo() {
+        ?>
+        <style>
+            #menu-recursos {
+                top: 0px; 
+                right: 0px; 
+                position: fixed; 
+                width: 240px; 
+                height: 100%; 
+                z-index: 999; 
+            }
+        </style>    
+        <?php
     }
 
     public function renderizar_html() {
         ?>
-        <nav id="menu-recursos" style="top: 0px; right: 0px; position: fixed; width: 240px; height: 100%; z-index: 999; display: none" class="bg-white shadow-md">
+        <nav id="menu-recursos" style="display: none" class="bg-white shadow">
             <ul class="nav flex-column">
-                <li class="nav-item p-3 text-white bg-dark">
-                    <h3 id="botao-fechar-menu-recursos" style="cursor: pointer">Recursos <i class="fa fa-arrow-right" style="vertical-align: middle"></i></h3>
-                    <span class="">Pontuação: <b>182</b></span>
+                <li id="botao-fechar-menu-recursos" class="nav-item p-3 text-white bg-dark cursor-pointer fade-item-menu" title="Fechar Barra de Recursos">
+                    <h3>Recursos</h3>
+                    <span class="">182 pts</span>
+                </li>
+                <li class="nav-item list-group-item-action">
+                    <a class="nav-link" href="#!">
+                        <i class="fa fa-sync mr-2"></i> Coletar
+                    </a>
                 </li>
                 <li class="nav-item nav-link"><i class="fa fa-coins mr-2"></i> Ouro <span class="float-right">193</span></li>
                 <li class="nav-item nav-link"><i class="fa fa-tree mr-2"></i> Madeira <span class="float-right">79</span></li>
@@ -37,12 +57,6 @@ class Comp_Nav_Recursos implements Componente {
                 <li class="nav-item nav-link"><i class="fa fa-flask mr-2"></i> Tecnologia <span class="float-right">7</span></li>
             </ul>
         </nav>
-        <?php
-    }
-
-    public function renderizar_estilo() {
-        ?>
-        <style></style>    
         <?php
     }
 

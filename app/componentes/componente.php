@@ -2,22 +2,36 @@
 /**
  * Template para criação de componentes
  */
-interface Componente {
+abstract class Componente {
+    
+    /**
+     * Renderizar estilo CSS
+     */
+    public abstract function renderizar_estilo();
     
     /**
      * Renderizar HTML
      */
-    public function renderizar_html();
+    public abstract function renderizar_html();
     
     /**
      * Renderizar script JS
      */
-    public function renderizar_script();
-    
+    public abstract function renderizar_script();
+
     /**
-     * Renderizar style CSS
+     * Renderizar componente por completo.<br>
+     * <code>
+     * $this->renderizar_estilo();<br>
+     * $this->renderizar_html();<br>
+     * $this->renderizar_script();
+     * </code>
      */
-    public function renderizar_estilo();
+    public function renderizar() {
+        $this->renderizar_estilo();
+        $this->renderizar_html();
+        $this->renderizar_script();
+    }
     
 }
 

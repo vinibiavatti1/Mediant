@@ -4,8 +4,8 @@
     font-size: 12px;
 }
 
-.fade-text:hover {
-    opacity: 0.8;
+.fade-hover:hover {
+    opacity: 0.7;
 }
 
 .divider {
@@ -16,4 +16,25 @@
 
 .fundo {
     background-color: rgba(0,0,0,0.1)
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.fade-item-menu:hover {
+    background-color: rgba(0,0,0,0.9)!important;
+}
+
+
+#conteudo {
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+@media only screen and (max-width: 1300px) {
+    #conteudo {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
 }

@@ -6,52 +6,68 @@ Serv_Importacao::importar_modulos_php();
 /**
  * Componente navbar do topo
  */
-class Comp_Nav_Topo implements Componente {
-    
-    private $altura = "50px";
+class Comp_Nav_Topo extends Componente {
 
     public function __construct() {
         
     }
-
-    public function renderizar_html() {
-        ?>
-        <nav class="bg-dark p-3 shadow-sm" style="height: <?=$this->altura?>">
-            <div href="#!" class="mr-3 fade-text bg-primary d-inline-block" id="botao-menu">
-                <i class="fa fa-lg fa-bars text-white"></i>
-            </div>
-            <h4 class="text-white" style="display: inline-block; font-weight: normal;">Mediant</h4>
-            <span class="float-right">
-                <a href="#!" id="botao-menu-recursos" class="">
-                    <i class="fa fa-2x fa-cubes text-white pt-2"></i>
-                </a>
-            </span>
-        </nav>
-        <?php
-    }
-
+    
     public function renderizar_estilo() {
         ?>
         <style></style>    
         <?php
     }
 
+    public function renderizar_html() {
+        ?>
+        <nav id="nav-topo" class="bg-dark shadow" style="text-align: center">
+            <span class="float-left">
+                <span href="#!" class="mr-3 d-inline-block p-4 cursor-pointer fade-item-menu" id="botao-menu">
+                    <i class="fa fa-lg fa-bars text-white"></i>
+                </span>
+            </span>
+            <span href="#!" class="mr-3 d-inline-block" style="padding: 9px">
+                <span class="text-white mb-0" style="font-weight: 300; font-size: 20px;">Mediant</span>
+            </span>
+            <span class="float-right">
+                <span href="#!" class="d-inline-block p-4 cursor-pointer fade-item-menu" id="botao-menu-recursos">
+                    <i class="fa fa-lg fa-cubes text-white"></i>
+                </span>
+            </span>
+        </nav>
+        <?php
+    }
+
     public function renderizar_script() {
+        $menu_aberto = Serv_Cookie::get_cookie("menu_aberto");
+        $menu_recursos_aberto = Serv_Cookie::get_cookie("menu_recursos_aberto");
         ?>
         <script>
+            var menu_aberto = <?=$menu_aberto?>;
+            var menu_recursos_aberto = <?=$menu_recursos_aberto?>;
             $(document).ready(() => {
                 $("#botao-menu").click(() => {
                     $("#menu").show();
+                    document.cookie = "menu_aberto=1";
                 });
                 $("#botao-fechar-menu").click(() => {
                     $("#menu").hide();
+                    document.cookie = "menu_aberto=0";
                 });
                 $("#botao-menu-recursos").click(() => {
                     $("#menu-recursos").show();
+                    document.cookie = "menu_recursos_aberto=1";
                 });
                 $("#botao-fechar-menu-recursos").click(() => {
                     $("#menu-recursos").hide();
+                    document.cookie = "menu_recursos_aberto=0";
                 });
+                if(menu_aberto) {
+                    $('#botao-menu').click();
+                }
+                if(menu_recursos_aberto) {
+                    $('#botao-menu-recursos').click();
+                }
             });
         </script> 
         <?php

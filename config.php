@@ -10,15 +10,16 @@ class Config {
     const IDIOMA = "pt_BR";
     
     // Cogigurações Gerais
-    const TITULO = "Site";
-    const AUTOR = "Autor";
-    const DESCRICAO = "Descrição";
-    const PALAVRAS_CHAVE = "Palavras,Chave";
+    const TITULO = "Mediant";
+    const AUTOR = "Vinícius Reif Biavatti";
+    const DESCRICAO = "Jogo de Estratégia";
+    const PALAVRAS_CHAVE = "Estratégia, Jogo, Strategy, Gerencial, Mediant";
     const RESPONSIVO = true;
     const VERSAO = "1.0.0";
 
-    // URL base para redirecionamentos, importações, etc
+    // Configurações de URL e páginas para redirecionamentos, importações e índice
     const URL_BASE = "http://localhost/mediant";
+    const PAGINA_INICIAL = "pg_dashboard.php";
     
     // Configuração de acesso a base de dados
     const BASE_SERVIDOR = "localhost";

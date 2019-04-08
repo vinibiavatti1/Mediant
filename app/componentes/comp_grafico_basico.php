@@ -6,7 +6,7 @@ Serv_Importacao::importar_modulos_php();
 /**
  * Componente de gráfico (Chartjs)
  */
-class Comp_Grafico_Basico implements Componente {
+class Comp_Grafico_Basico extends Componente {
 
     const TIPO_BARRA = "bar";
     const TIPO_LINHA = "line";

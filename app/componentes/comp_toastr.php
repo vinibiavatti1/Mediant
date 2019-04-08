@@ -6,7 +6,7 @@ Serv_Importacao::importar_modulos_php();
 /**
  * Componente de Toastr
  */
-class Comp_Toastr implements Componente {
+class Comp_Toastr extends Componente {
     
     const TIPO_SUCESSO = "success";
     const TIPO_ERRO = "error";

@@ -15,7 +15,7 @@ class Config {
     const DESCRICAO = "Jogo de Estratégia";
     const PALAVRAS_CHAVE = "Estratégia, Jogo, Strategy, Gerencial, Mediant";
     const RESPONSIVO = true;
-    const VERSAO = "1.0.0";
+    const VERSAO = "1.0.0 Alpha";
 
     // Configurações de URL e páginas para redirecionamentos, importações e índice
     const URL_BASE = "http://localhost/mediant";

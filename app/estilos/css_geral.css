@@ -38,3 +38,11 @@
         margin-right: 0px;
     }
 }
+
+.underline-hover:hover {
+    text-decoration: underline!important;
+}
+
+.font-light {
+    font-weight: 200;
+}

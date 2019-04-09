@@ -25,7 +25,7 @@ class Comp_Painel_Construcoes extends Componente {
                 Cidade
             </div>
             <div class="shadow-sm p-3 mb-2 bg-white">
-                <table class="table">
+                <table class="table cell-border">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -36,28 +36,28 @@ class Comp_Painel_Construcoes extends Componente {
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>Teste</td>
-                            <td><a href="#!">Teste</a></td>
+                            <td>Centro</td>
+                            <td><a href="#!">Visitar</a></td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>Teste</td>
-                            <td><a href="#!">Teste</a></td>
+                            <td>2</td>
+                            <td>Quartel</td>
+                            <td><a href="#!">Visitar</a></td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>Teste</td>
-                            <td><a href="#!">Teste</a></td>
+                            <td>3</td>
+                            <td>Mina de Ouro</td>
+                            <td><a href="#!">Visitar</a></td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>Teste</td>
-                            <td><a href="#!">Teste</a></td>
+                            <td>4</td>
+                            <td>Madeireira</td>
+                            <td><a href="#!">Visitar</a></td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>Teste</td>
-                            <td><a href="#!">Teste</a></td>
+                            <td>5</td>
+                            <td>Centro de Pesquisa</td>
+                            <td><a href="#!">Visitar</a></td>
                         </tr>
                     </tbody>
                 </table>

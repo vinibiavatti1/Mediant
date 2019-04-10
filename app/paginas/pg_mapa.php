@@ -5,7 +5,7 @@
         <title></title>
         <style>
             .box {
-                padding: 10px;
+                padding: 80px!important;
                 background-color: rgba(0,0,0,0.1);
                 text-align: center;
             }

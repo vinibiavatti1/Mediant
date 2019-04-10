@@ -12,13 +12,13 @@ class Comp_Nav_Topo extends Componente {
         
     }
     
-    public function renderizar_estilo() {
+    public function estilo() {
         ?>
         <style></style>    
         <?php
     }
 
-    public function renderizar_html() {
+    public function html() {
         ?>
         <nav id="nav-topo" class="bg-dark shadow" style="text-align: center">
             <span class="float-left">
@@ -38,7 +38,7 @@ class Comp_Nav_Topo extends Componente {
         <?php
     }
 
-    public function renderizar_script() {
+    public function script() {
         $menu_aberto = Serv_Cookie::get_cookie("menu_aberto");
         $menu_recursos_aberto = Serv_Cookie::get_cookie("menu_recursos_aberto");
         ?>

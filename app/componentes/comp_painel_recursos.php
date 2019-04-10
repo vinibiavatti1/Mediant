@@ -18,7 +18,7 @@ class Comp_Painel_Recursos extends Componente {
     /**
      * Renderizar HTML
      */
-    public function renderizar_html() {
+    public function html() {
         ?>
         <div>
             <div class="shadow-sm pb-1 pt-1 pl-3 pr-3 bg-light">
@@ -116,7 +116,7 @@ class Comp_Painel_Recursos extends Componente {
     /**
      * Renderizar script JS
      */
-    public function renderizar_estilo() {
+    public function estilo() {
         ?>
         <style></style>    
         <?php
@@ -125,7 +125,7 @@ class Comp_Painel_Recursos extends Componente {
     /**
      * Renderizar estilo CSS
      */
-    public function renderizar_script() {
+    public function script() {
         ?>
         <script></script>    
         <?php

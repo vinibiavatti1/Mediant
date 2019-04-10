@@ -22,23 +22,23 @@ class Comp_Status extends Componente {
         $this->codigo = Serv_Http::get("status");
     }
     
-    public function renderizar_html() {
+    public function html() {
         ?>
         <div></div>
         <?php
     }
 
-    public function renderizar_estilo() {
+    public function estilo() {
         ?>
         <style></style>    
         <?php
     }
 
-    public function renderizar_script() {
+    public function script() {
         foreach (Comp_Status::LISTA_STATUS as $status) {
             if($status["codigo"] == $this->codigo) {
                 $comp_toastr = new Comp_Toastr($status["tipo"], $status["mensagem"]);
-                $comp_toastr->renderizar_script();
+                $comp_toastr->script();
             }
         }
     }
@@ -52,7 +52,7 @@ class Comp_Status extends Componente {
      */
     public static function criacao_rapida() {
         $comp_status = new Comp_Status();
-        $comp_status->renderizar_script();
+        $comp_status->script();
     }
 
 }

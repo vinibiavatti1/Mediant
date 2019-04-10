@@ -16,6 +16,10 @@ Serv_Evento::pagina();
         ?>
     </head>
     <body class="fundo">
+        <?php 
+        $comp_painel_cookie = new Comp_Painel_Cookie();
+        $comp_painel_cookie->renderizar();
+        ?>
         <div id="conteudo">
             <div class="container">
                 <div class="mt-5" style="text-align: center">
@@ -32,13 +36,13 @@ Serv_Evento::pagina();
                                 <form action="../acoes/acao_login.php" method="POST">
                                     <label>Login</label>
                                     <div class="input-group mb-2">
-                                        <input name="login" class="form-control" placeholder="Insira seu login" autofocus=""/>
+                                        <input name="login" type="email" required="" class="form-control" placeholder="Insira seu login" autofocus=""/>
                                     </div>
                                     <label>Senha</label>
                                     <div class="input-group mb-3">
-                                        <input name="senha" class="form-control" placeholder="Insira sua senha" />
+                                        <input name="senha" type="password" required="" class="form-control" placeholder="Insira sua senha" />
                                     </div>
-                                    <button type="button" class="btn btn-secondary">Login</button>
+                                    <button type="submit" class="btn btn-secondary">Login</button>
                                     <a class="btn text-secondary underline-hover cursor-pointer">Cadastrar</a>
                                     <a class="btn text-secondary underline-hover cursor-pointer">Esqueci minha senha</a><br><br>
                                     <b>Mediant</b> é um jogo de gerenciamento estratégico na qual você se torna responsável por administrar sua cidade. O foco do jogo consiste em

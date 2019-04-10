@@ -7,17 +7,17 @@ abstract class Componente {
     /**
      * Renderizar estilo CSS
      */
-    public abstract function renderizar_estilo();
+    public abstract function estilo();
     
     /**
      * Renderizar HTML
      */
-    public abstract function renderizar_html();
+    public abstract function html();
     
     /**
      * Renderizar script JS
      */
-    public abstract function renderizar_script();
+    public abstract function script();
 
     /**
      * Renderizar componente por completo.<br>
@@ -28,9 +28,9 @@ abstract class Componente {
      * </code>
      */
     public function renderizar() {
-        $this->renderizar_estilo();
-        $this->renderizar_html();
-        $this->renderizar_script();
+        $this->estilo();
+        $this->html();
+        $this->script();
     }
     
 }

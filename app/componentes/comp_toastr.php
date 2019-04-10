@@ -21,19 +21,19 @@ class Comp_Toastr extends Componente {
         $this->mensagem = $mensagem;
     }
     
-    public function renderizar_html() {
+    public function html() {
         ?>
         <div></div>
         <?php
     }
 
-    public function renderizar_estilo() {
+    public function estilo() {
         ?>
         <style></style>    
         <?php
     }
 
-    public function renderizar_script() {
+    public function script() {
         ?>
         <script>
             $(document).ready(function() {
@@ -71,7 +71,7 @@ class Comp_Toastr extends Componente {
     */
    public static function criacao_rapida($tipo, $mensagem) {
        $comp_toastr = new Comp_Toastr($tipo, $mensagem);
-       $comp_toastr->renderizar_script();
+       $comp_toastr->script();
    }
 }
 

@@ -25,7 +25,7 @@ class Comp_Grafico_Basico extends Componente {
         $this->id = $id;
     }
 
-    public function renderizar_html() {
+    public function html() {
         ?>
         <div style="width:<?= $this->largura ?>; height:<?= $this->altura ?>">
             <canvas id="<?= $this->id ?>"></canvas>
@@ -34,13 +34,13 @@ class Comp_Grafico_Basico extends Componente {
         <?php
     }
 
-    public function renderizar_estilo() {
+    public function estilo() {
         ?>
         <style></style>    
         <?php
     }
 
-    public function renderizar_script() {
+    public function script() {
         ?>
         <script>
             $(document).ready(function () {

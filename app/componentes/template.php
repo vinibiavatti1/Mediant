@@ -17,7 +17,7 @@ class Comp_Bem_Vindo extends Componente {
     /**
      * Renderizar HTML
      */
-    public function renderizar_html() {
+    public function html() {
         ?>
         <div></div>
         <?php
@@ -26,7 +26,7 @@ class Comp_Bem_Vindo extends Componente {
     /**
      * Renderizar script JS
      */
-    public function renderizar_estilo() {
+    public function estilo() {
         ?>
         <style></style>    
         <?php
@@ -35,7 +35,7 @@ class Comp_Bem_Vindo extends Componente {
     /**
      * Renderizar estilo CSS
      */
-    public function renderizar_script() {
+    public function script() {
         ?>
         <script></script>    
         <?php

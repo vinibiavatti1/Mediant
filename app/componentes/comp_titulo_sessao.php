@@ -21,7 +21,7 @@ class Comp_Titulo_Sessao extends Componente {
     /**
      * Renderizar HTML
      */
-    public function renderizar_html() {
+    public function html() {
         ?>
         <div>
             <h2 class="mt-3"><?= $this->titulo ?></h2>
@@ -33,7 +33,7 @@ class Comp_Titulo_Sessao extends Componente {
     /**
      * Renderizar script JS
      */
-    public function renderizar_estilo() {
+    public function estilo() {
         ?>
         <style></style>    
         <?php
@@ -42,7 +42,7 @@ class Comp_Titulo_Sessao extends Componente {
     /**
      * Renderizar estilo CSS
      */
-    public function renderizar_script() {
+    public function script() {
         ?>
         <script></script>    
         <?php
@@ -53,7 +53,7 @@ class Comp_Titulo_Sessao extends Componente {
      */
     public static function criacao_rapida($titulo) {
         $comp = new Comp_Titulo_Sessao($titulo);
-        $comp->renderizar_html();
+        $comp->html();
     }
 
 }

@@ -12,7 +12,7 @@ class Comp_Nav_Recursos extends Componente {
         
     }
     
-    public function renderizar_estilo() {
+    public function estilo() {
         ?>
         <style>
             #menu-recursos {
@@ -27,7 +27,7 @@ class Comp_Nav_Recursos extends Componente {
         <?php
     }
 
-    public function renderizar_html() {
+    public function html() {
         ?>
         <nav id="menu-recursos" style="display: none" class="bg-white shadow">
             <ul class="nav flex-column">
@@ -60,7 +60,7 @@ class Comp_Nav_Recursos extends Componente {
         <?php
     }
 
-    public function renderizar_script() {
+    public function script() {
         ?>
         <script></script> 
         <?php

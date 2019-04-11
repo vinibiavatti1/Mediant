@@ -12,7 +12,7 @@ class Crud_Catalogo_Construcao {
      * @param type $id_cidade
      */
     public static function get_construcoes_disponiveis_cidade($id_cidade) {
-        $era = Crud_Cidade::get_cidade($id_cidade)["era"];
+        $era = Crud_Cidade::get($id_cidade)["era"];
         $sql = "
         SELECT  
             catalogo_construcao.id,

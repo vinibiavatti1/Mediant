@@ -43,8 +43,8 @@ class Comp_Nav_Topo extends Componente {
         $menu_recursos_aberto = Serv_Cookie::get_cookie("menu_recursos_aberto");
         ?>
         <script>
-            var menu_aberto = <?=$menu_aberto?>;
-            var menu_recursos_aberto = <?=$menu_recursos_aberto?>;
+            var menu_aberto = <?=$menu_aberto ? 1 : 0?>;
+            var menu_recursos_aberto = <?=$menu_recursos_aberto ? 1 : 0?>;
             $(document).ready(() => {
                 $("#botao-menu").click(() => {
                     $("#menu").show();

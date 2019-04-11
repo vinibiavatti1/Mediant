@@ -36,7 +36,7 @@ class Comp_Nav_Menu extends Componente {
                     Vinícius Biavatti
                 </li>
                 <li class="nav-item list-group-item-action bg-light"><a class="nav-link">Dashboard</a></li>
-                <li class="nav-item list-group-item-action"><a class="nav-link " href="#!">Home</a></li>
+                <li class="nav-item list-group-item-action"><a class="nav-link " href="./pg_mapa.php">Mapa</a></li>
                 <li class="nav-item list-group-item-action"><a class="nav-link " href="#!">Unidades</a></li>
                 <li class="nav-item list-group-item-action"><a class="nav-link " href="#!">Home</a></li>
                 <li class="nav-item list-group-item-action"><a class="nav-link " href="#!">Dashboard</a></li>

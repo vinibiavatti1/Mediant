@@ -102,6 +102,17 @@ class Serv_Banco_Dados {
         $rs = Serv_Banco_Dados::executar_select("SELECT * FROM $tabela LIMIT $pagina,1");
         return mysqli_fetch_assoc($rs);
     }
+    
+    /**
+     * Obter último registro inserido da tabela
+     * @param type $tabela
+     * @param type $coluna_ordem
+     * @return type
+     */
+    public static function get_ultimo_reg_inserido($tabela, $coluna_ordem = "id") {
+        $rs = Serv_Banco_Dados::executar_select("SELECT * FROM $tabela ORDER BY $coluna_ordem DESC LIMIT 1");
+        return mysqli_fetch_assoc($rs);
+    }
 }
 
 /**

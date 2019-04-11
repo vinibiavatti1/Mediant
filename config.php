@@ -26,7 +26,7 @@ class Config {
     const BASE_USUARIO = "root";
     const BASE_SENHA = "";
     const BASE_PORTA = "3306";
-    const BASE_NOME = "base";
+    const BASE_NOME = "mediant";
     
     // Logs a serem considerados (INFO, ERRO, DEBUG e/ou SQL). Em produção é
     // recomendado deixar a configuração ativa, com o tipo ERRO somente

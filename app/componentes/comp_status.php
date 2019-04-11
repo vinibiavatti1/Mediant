@@ -13,8 +13,11 @@ class Comp_Status extends Componente {
         [ "codigo" => 1, "tipo" => Comp_Toastr::TIPO_SUCESSO, "mensagem" => "Registro inserido com sucesso" ],
         [ "codigo" => 2, "tipo" => Comp_Toastr::TIPO_SUCESSO, "mensagem" => "Registro alterado com sucesso" ],
         [ "codigo" => 3, "tipo" => Comp_Toastr::TIPO_SUCESSO, "mensagem" => "Registro deletado com sucesso" ],
-        [ "codigo" => 4, "tipo" => Comp_Toastr::TIPO_ERRO, "mensagem" => "Erro ao realizar operação" ],
+        [ "codigo" => 4, "tipo" => Comp_Toastr::TIPO_ERRO, "mensagem" => "Erro ao realizar operação. Tente novamente." ],
         [ "codigo" => 5, "tipo" => Comp_Toastr::TIPO_AVISO, "mensagem" => "Faça seu Login novamente" ],
+        [ "codigo" => 6, "tipo" => Comp_Toastr::TIPO_SUCESSO, "mensagem" => "E-mail validado com sucesso! Faça seu login" ],
+        [ "codigo" => 7, "tipo" => Comp_Toastr::TIPO_ERRO, "mensagem" => "As senha informada não condiz com a senha de confirmação" ],
+        [ "codigo" => 8, "tipo" => Comp_Toastr::TIPO_ERRO, "mensagem" => "O cadastro não pôde ser efeturado pois a política não foi aceita" ]
         // Insira aqui os novos status
     ];
 

@@ -19,4 +19,4 @@ $http_data = Serv_Http::get("data");
 $data = Serv_Data::converter_str_para_data($data_http);
 
 // Redirecionar
-Serv_Url::redirecionar_status("app/paginas/pg_exemplo.php", "Operação concluída");
+Serv_Url::redirecionar_status("app/paginas/pg_login.php", 6);

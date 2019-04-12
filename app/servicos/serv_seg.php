@@ -177,5 +177,22 @@ class Serv_Seg {
         }
     }
     
+    /**
+     * Validar sessão do usuário
+     * @param type $ignorar_cidade
+     */
+    public static function validar_sessao_usuario($ignorar_cidade = false) {
+        $id_usuario = Serv_Sessao::get("id_usuario");
+        if($id_usuario == null) {
+            Serv_Seg::acesso_negado();
+        }
+        if(!$ignorar_cidade) {
+            $id_cidade = Serv_Sessao::get("id_cidade");
+            if($id_cidade == null) {
+                Serv_Seg::acesso_negado();
+            }
+        }
+    }
+    
 }
 

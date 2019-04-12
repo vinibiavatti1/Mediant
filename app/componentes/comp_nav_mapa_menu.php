@@ -41,6 +41,9 @@ class Comp_Nav_Mapa_Menu extends Componente {
                     <a class="nav-link " href="#!">Me Localizar</a>
                 </li>
                 <li class="nav-item list-group-item-action">
+                    <a id="botao-opacidade" class="nav-link " id="mudar-lado" href="#!">Mudar Opacidade</a>
+                </li>
+                <li class="nav-item list-group-item-action">
                     <a class="nav-link " id="mudar-lado" href="#!">Mudar Lado</a>
                 </li>
                 <li class="nav-item bg-light">

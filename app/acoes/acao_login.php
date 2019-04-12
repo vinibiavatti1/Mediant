@@ -1,8 +1,32 @@
 <?php
+// Importar classes
+require_once(__DIR__ . "/../servicos/serv_importacao.php");
+Serv_Importacao::importar_modulos_php();
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// Chamar evento de ação
+Serv_Evento::acao();
 
+// Tempo de espera
+const TEMPO_ESPERA = 3;
+
+// Validar entrada
+Serv_Seg::validar_post(["email", "senha"]);
+
+// Obter parâmetros HTTP
+$email = Serv_Http::post("email");
+$senha = Serv_Http::post_sha1("senha");
+
+// Login
+$usuario = Crud_Login::login($email, $senha);
+if($usuario == null) {
+    sleep(TEMPO_ESPERA);
+    Serv_Url::redirecionar_status("app/paginas/pg_login.php", 9);
+}
+
+// Sessão
+Serv_Sessao::set("id_usuario", $usuario["id"]);
+Serv_Sessao::set("nome_usuario", $usuario["nome"]);
+Serv_Sessao::set("email_usuario", $usuario["email"]);
+
+// Redirecionar
+Serv_Url::redirecionar("app/paginas/pg_mundo.php");

@@ -32,7 +32,7 @@ Serv_Evento::pagina();
                                 <form action="../acoes/acao_login.php" method="POST">
                                     <label>E-mail</label>
                                     <div class="input-group mb-2">
-                                        <input name="login" type="email" required="" class="form-control" placeholder="Insira seu e-mail" autofocus=""/>
+                                        <input name="email" type="email" required="" class="form-control" placeholder="Insira seu e-mail" autofocus=""/>
                                     </div>
                                     <label>Senha</label>
                                     <div class="input-group mb-3">

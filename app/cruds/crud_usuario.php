@@ -27,5 +27,16 @@ class Crud_Usuario {
         return Serv_Banco_Dados::executar_update($sql);
     }
     
+    /**
+     * Obter usuário
+     * @param type $id
+     */
+    public static function get($id) {
+        $sql = "SELECT * FROM usuario WHERE id = $id";
+        $rs = Serv_Banco_Dados::executar_select($sql);
+        return Serv_Banco_Dados::get_dados($rs);
+    }
+    
+    
 }
 

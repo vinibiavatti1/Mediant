@@ -11,18 +11,12 @@ class Comp_Mapa extends Componente {
     private $mundo;
     private $entidades = [];
     private $cidades = [];
-    private $opacidade;
 
     /**
      * Construir componente
      */
     public function __construct() {
-        $apagar_entidades = Serv_Http::get("apagar_entidades");
-        if($apagar_entidades != null) {
-            $this->opacidade = "opacidade";
-        }
-        
-        $this->mundo = Crud_Mundo::get_mundo(2);
+        $this->mundo = Crud_Mundo::get(2);
         $rs = Crud_Mundo::get_entidades($this->mundo["id"]);
         while($row = Serv_Banco_Dados::get_dados($rs)) {
             $this->entidades[$row["x"]."/".$row["y"]] = $row["tipo"];
@@ -32,7 +26,8 @@ class Comp_Mapa extends Componente {
             $this->cidades[$row["x"]."/".$row["y"]] = [
                 "id" => $row["id"],
                 "nome" => $row["nome"],
-                "usuario" => $row["nome_usuario"]
+                "usuario" => $row["nome_usuario"],
+                "pontos" => $row["pontos"]
             ];
         }
     }
@@ -51,23 +46,28 @@ class Comp_Mapa extends Componente {
                         for ($j = 0; $j < $this->mundo["tamanho"]; $j++) {
                             $conteudo = "";
                             $opacidade = $this->opacidade;
+                            $tooltip = "";
+                            $classe = "";
                             if(isset($this->cidades["$i/$j"])) {
                                 $id = $this->cidades["$i/$j"]["id"];
                                 $nome = $this->cidades["$i/$j"]["nome"];
                                 $usuario = $this->cidades["$i/$j"]["usuario"];
-                                $conteudo = "<i class='fa fa-map-marker-alt entidade' data-id='$id' data-nome='$nome' data-usuario='$usuario'></i>";
+                                $pontos = $this->cidades["$i/$j"]["pontos"];
+                                $conteudo = "<i class='fa fa-map-marker-alt entidade cidade' data-id='$id' data-nome='$nome' data-usuario='$usuario'></i>";
+                                $tooltip = "data-toggle='tooltip' data-placement='top' data-html='true' title='<b>Nome:</b> $nome<br><b>Usuário:</b> $usuario<br><b>Pontuação:</b> $pontos<b><br>X:</b> $j <b>Y:</b> $i'";
+                                $classe = "cursor-pointer cidade";
                                 $fundo_cidade = "fundo-cidade";
                             } else if(isset($this->entidades["$i/$j"])) {
                                 switch ($this->entidades["$i/$j"]) {
-                                    case Const_Entidade::ENTIDADE_MONTANHA: $conteudo = "<i class='fa fa-mountain montanha entidade $opacidade'></i>"; break;
-                                    case Const_Entidade::ENTIDADE_LAGO: $conteudo = "<i class='fa fa-water agua entidade $opacidade'></i>"; break;
-                                    case Const_Entidade::ENTIDADE_FLORESTA: $conteudo = "<i class='fa fa-tree arvore entidade $opacidade'></i>"; break;
+                                    case Const_Entidade::ENTIDADE_MONTANHA: $conteudo = "<i class='fa fa-mountain montanha entidade opacidade'></i>"; break;
+                                    case Const_Entidade::ENTIDADE_LAGO: $conteudo = "<i class='fa fa-water agua entidade opacidade'></i>"; break;
+                                    case Const_Entidade::ENTIDADE_FLORESTA: $conteudo = "<i class='fa fa-tree arvore entidade opacidade'></i>"; break;
                                     default:
                                         break;
                                 }
                             }
                             ?>
-                        <td class='box' data-y="<?=$i?>" data-x="<?=$j?>">
+                        <td class='box <?=$classe?>' data-y="<?=$i?>" data-x="<?=$j?>" <?=$tooltip?>>
                             <div style="width: 32px; height: 32px;  vertical-align: middle!important; line-height: 30px!important">
                                 <?= $conteudo ?>
                             </div>
@@ -111,9 +111,6 @@ class Comp_Mapa extends Componente {
             .fundo-cidade {
                 background-color: rgba(0,0,0,0.2);
             }
-            .opacidade {
-                opacity: 0.4;
-            }
         </style>    
         <?php
     }
@@ -125,10 +122,24 @@ class Comp_Mapa extends Componente {
         ?>
         <script>
         $(document).ready(() => {
-            $(".box").hover(function() {
+            
+            $('.cidade').tooltip();
+            
+            $(".box").hover(function (){
                 $("#coordenada-x").html($(this).attr("data-x"));
                 $("#coordenada-y").html($(this).attr("data-y"));
-                
+            });
+            var mudar_opacidade = true;
+            $("#botao-opacidade").click(() => {
+                $("body").loading();
+                if(mudar_opacidade) {
+                    $(".opacidade").css("opacity",0.3);
+                    $("body").loading('stop');
+                } else {
+                    $(".opacidade").css("opacity",1.0);
+                    $("body").loading('stop');
+                }
+                mudar_opacidade = !mudar_opacidade;
             });
         });
         </script>    

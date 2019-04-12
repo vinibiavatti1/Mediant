@@ -22,6 +22,7 @@ class Serv_Importacao {
         <link href="<?= Serv_Url::incluir_url_base("/plugins/toastr-2.1.4/toastr.min.css") ?>" rel="stylesheet" type="text/css"/>
         <link href="<?= Serv_Url::incluir_url_base("/plugins/dropify-0.2.2/css/dropify.min.css") ?>" rel="stylesheet" type="text/css"/>
         <link href="<?= Serv_Url::incluir_url_base("/plugins/charjs-2.8.0/Chart.min.css") ?>" rel="stylesheet" type="text/css"/>
+        <link href="<?= Serv_Url::incluir_url_base("/plugins/jquery-loading-1.3.0/jquery.loading.min.css") ?>" rel="stylesheet" type="text/css"/>
         <?php
     }
 
@@ -33,6 +34,7 @@ class Serv_Importacao {
         <script src="<?=Serv_Url::incluir_url_base("/app/scripts/js_geral.js")?>" type="text/javascript"></script>
         <script src="<?=Serv_Url::incluir_url_base("/plugins/jquery-3.3.1/jquery.js")?>" type="text/javascript"></script>
         <script src="<?=Serv_Url::incluir_url_base("/plugins/datatable-1.10.18/js/jquery.dataTables.min.js")?>" type="text/javascript"></script>
+        <script src="<?=Serv_Url::incluir_url_base("/plugins/bootstrap-4.3.1/js/popper.min.js")?>" type="text/javascript"></script>
         <script src="<?=Serv_Url::incluir_url_base(Config::MATERIAL_DESIGN ? "/plugins/materialize-1.0.0/js/materialize.min.js" : "/plugins/bootstrap-4.3.1/js/bootstrap.min.js")?>" type="text/javascript"></script>
         <script src="<?=Serv_Url::incluir_url_base("/plugins/select2-4.0.6/js/select2.full.min.js")?>" type="text/javascript"></script>
         <script src="<?=Serv_Url::incluir_url_base("/plugins/fancybox-3.5.7/jquery.fancybox.min.js")?>" type="text/javascript"></script>
@@ -42,6 +44,7 @@ class Serv_Importacao {
         <script src="<?=Serv_Url::incluir_url_base("/plugins/dropify-0.2.2/js/dropify.min.js")?>" type="text/javascript"></script>
         <script src="<?=Serv_Url::incluir_url_base("/plugins/charjs-2.8.0/Chart.bundle.min.js")?>" type="text/javascript"></script>
         <script src="<?=Serv_Url::incluir_url_base("/plugins/charjs-2.8.0/Chart.min.js")?>" type="text/javascript"></script>
+        <script src="<?=Serv_Url::incluir_url_base("/plugins/jquery-loading-1.3.0/jquery.loading.min.js")?>" type="text/javascript"></script>
         <?php
     }
     

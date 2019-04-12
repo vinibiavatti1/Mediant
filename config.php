@@ -19,7 +19,7 @@ class Config {
 
     // Configurações de URL e páginas para redirecionamentos, importações e índice
     const URL_BASE = "http://localhost/mediant";
-    const PAGINA_INICIAL = "pg_dashboard.php";
+    const PAGINA_INICIAL = "pg_login.php";
     
     // Configuração de acesso a base de dados
     const BASE_SERVIDOR = "localhost";

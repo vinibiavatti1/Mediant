@@ -17,7 +17,8 @@ class Comp_Status extends Componente {
         [ "codigo" => 5, "tipo" => Comp_Toastr::TIPO_AVISO, "mensagem" => "Faça seu Login novamente" ],
         [ "codigo" => 6, "tipo" => Comp_Toastr::TIPO_SUCESSO, "mensagem" => "E-mail validado com sucesso! Faça seu login" ],
         [ "codigo" => 7, "tipo" => Comp_Toastr::TIPO_ERRO, "mensagem" => "As senha informada não condiz com a senha de confirmação" ],
-        [ "codigo" => 8, "tipo" => Comp_Toastr::TIPO_ERRO, "mensagem" => "O cadastro não pôde ser efeturado pois a política não foi aceita" ]
+        [ "codigo" => 8, "tipo" => Comp_Toastr::TIPO_ERRO, "mensagem" => "O cadastro não pôde ser efeturado pois a política não foi aceita" ],
+        [ "codigo" => 9, "tipo" => Comp_Toastr::TIPO_ERRO, "mensagem" => "Usuário e/ou senha inválidos" ]
         // Insira aqui os novos status
     ];
 

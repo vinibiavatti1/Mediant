@@ -20,6 +20,7 @@ class Comp_Nav_Mapa_Topo extends Componente {
                 top: 0px;
                 left: 0px;
                 right: 0px;
+                z-index: 99;
             }
         </style>    
         <?php

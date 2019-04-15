@@ -41,7 +41,7 @@ Serv_Evento::pagina();
                         </div>
                     </div>
                     <div class="text-secondary" style="text-align: center">
-                        Copyright &copy; VBFoundation <?= date("Y"); ?>
+                        <?php Comp_Copyright::criacao_rapida(); ?>
                     </div>
                 </div>
             </div>

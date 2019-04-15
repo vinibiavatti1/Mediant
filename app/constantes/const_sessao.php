@@ -15,6 +15,7 @@ class Const_Sessao {
     
     // Customização
     const CHAVE_ID_CIDADE = "ID_CIDADE";
+    const CHAVE_NOME_CIDADE = "NOME_CIDADE";
     
 }
 

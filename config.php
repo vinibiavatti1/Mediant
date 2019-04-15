@@ -12,6 +12,7 @@ class Config {
     // Cogigurações Gerais
     const TITULO = "Mediant";
     const AUTOR = "Vinícius Reif Biavatti";
+    const EMPRESA = "VBFoundation";
     const DESCRICAO = "Jogo de Estratégia";
     const PALAVRAS_CHAVE = "Estratégia, Jogo, Strategy, Gerencial, Mediant";
     const RESPONSIVO = true;

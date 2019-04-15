@@ -21,6 +21,7 @@ if($cidade["id_usuario"] != $id_usuario) {
 }
 
 Serv_Sessao::set(Const_Sessao::CHAVE_ID_CIDADE, $cidade["id"]);
+Serv_Sessao::set(Const_Sessao::CHAVE_NOME_CIDADE, $cidade["nome"]);
 
 // Redirecionar
 Serv_Url::redirecionar("app/paginas/pg_dashboard.php");

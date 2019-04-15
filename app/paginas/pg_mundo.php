@@ -72,7 +72,7 @@ $cidades_usuario = Crud_Cidade::get_cidades_usuario($id_usuario);
                         </div>
                     </div>
                     <div class="text-secondary" style="text-align: center">
-                        Copyright &copy; VBFoundation <?= date("Y"); ?>
+                        <?php Comp_Copyright::criacao_rapida(); ?>
                     </div>
                 </div>
             </div>

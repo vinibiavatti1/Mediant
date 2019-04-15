@@ -6,14 +6,6 @@ Serv_Importacao::importar_modulos_php();
  * Serviço de manipulação de sessões de usuário.
  */
 class Serv_Sessao {
-    
-    const CHAVE_SESSAO = "SESSAO";
-    const CHAVE_ID_USUARIO = "ID_USUARIO";
-    const CHAVE_MODULOS = "MODULOS";
-    const CHAVE_PERMISSOES = "PERMISSOES";
-    const CHAVE_LICENCA = "LICENCA";
-    const CHAVE_TOKEN = "TOKEN";
-    const CHAVE_IDIOMA = "IDIOMA";
 
     /**
      * Iniciar sessão
@@ -59,42 +51,42 @@ class Serv_Sessao {
      * Definir sessão como ativa.
      */
     public static function set_sessao_ativa() {
-        Serv_Sessao::set(Serv_Sessao::CHAVE_SESSAO, true);
+        Serv_Sessao::set(Const_Sessao::CHAVE_SESSAO, true);
     }
     
     /**
      * Definir id de usuário da sessão
      */
     public static function set_id_usuario($id_usuario) {
-        Serv_Sessao::set(Serv_Sessao::CHAVE_ID_USUARIO, $id_usuario);
+        Serv_Sessao::set(Const_Sessao::CHAVE_ID_USUARIO, $id_usuario);
     }
     
     /**
      * Definir modulos que o usuário tem permissão.
      */
     public static function set_modulos(array $modulos) {
-        Serv_Sessao::set(Serv_Sessao::CHAVE_MODULOS, $modulos);
+        Serv_Sessao::set(Const_Sessao::CHAVE_MODULOS, $modulos);
     }
     
     /**
      * Definir modulos que o usuário tem permissão.
      */
     public static function set_permissoes(array $permissoes) {
-        Serv_Sessao::set(Serv_Sessao::CHAVE_PERMISSOES, $permissoes);
+        Serv_Sessao::set(Const_Sessao::CHAVE_PERMISSOES, $permissoes);
     }
     
     /**
      * Definir licença do usuário.
      */
     public static function set_licenca($licenca) {
-        Serv_Sessao::set(Serv_Sessao::CHAVE_LICENCA, $licenca);
+        Serv_Sessao::set(Const_Sessao::CHAVE_LICENCA, $licenca);
     }
     
     /**
      * Definir token do usuário.
      */
     public static function set_token($token) {
-        Serv_Sessao::set(Serv_Sessao::CHAVE_TOKEN, $token);
+        Serv_Sessao::set(Const_Sessao::CHAVE_TOKEN, $token);
     }
 
 }

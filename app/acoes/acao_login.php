@@ -24,9 +24,9 @@ if($usuario == null) {
 }
 
 // Sessão
-Serv_Sessao::set("id_usuario", $usuario["id"]);
-Serv_Sessao::set("nome_usuario", $usuario["nome"]);
-Serv_Sessao::set("email_usuario", $usuario["email"]);
+Serv_Sessao::set("ID_USUARIO", $usuario["id"]);
+Serv_Sessao::set("NOME_USUARIO", $usuario["nome"]);
+Serv_Sessao::set("EMAIL_USUARIO", $usuario["email"]);
 
 // Redirecionar
 Serv_Url::redirecionar("app/paginas/pg_mundo.php");

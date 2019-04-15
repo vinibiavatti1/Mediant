@@ -10,7 +10,7 @@ Serv_Evento::acao();
 Serv_Seg::validar_get(["id"]);
 
 // Validar Sessao
-Serv_Seg::validar_sessao_usuario(true);
+Serv_Seg::validar_sessao([Const_Sessao::CHAVE_ID_USUARIO]);
 
 // Obter parâmetros HTTP
 $id_cidade = Serv_Http::get("id");
@@ -20,7 +20,7 @@ if($cidade["id_usuario"] != $id_usuario) {
     Serv_Seg::acesso_negado();
 }
 
-Serv_Sessao::set("id_cidade", $cidade["id"]);
+Serv_Sessao::set(Const_Sessao::CHAVE_ID_CIDADE, $cidade["id"]);
 
 // Redirecionar
 Serv_Url::redirecionar("app/paginas/pg_dashboard.php");

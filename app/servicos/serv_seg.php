@@ -59,24 +59,30 @@ class Serv_Seg {
     }
     
     /**
-     * Validar sessão ativa.
+     * Validar sessão considerando as chaves.
      * Exemplo:<br>
      * <code>
-     * Serv_Seg::validar_sessao(); // Acesso Negado
-     * Serv_Sessao::set_sessao_ativa();
-     * Serv_Seg::validar_sessao(); // Acesso Permitido
+     * Serv_Seg::validar_sessao([Const_Sessao::CHAVE_ID_USUARIO]); // Acesso Negado
+     * Serv_Sessao::set(Const_Sessao::CHAVE_ID_USUARIO, 1);
+     * Serv_Seg::validar_sessao([Const_Sessao::CHAVE_ID_USUARIO]); // Acesso Permitido
      * </code>
      * @param type $retornar
      * @param type $mensagem
      * @param type $codigo_erro
      * @return type
      */
-    public static function validar_sessao($retornar = false, $mensagem = Serv_Http::HTTP_NAO_AUTORIZADO, $codigo_erro = 401) {
-        if($retornar) {
-            return isset($_SESSION[Serv_Sessao::CHAVE_SESSAO]);
+    public static function validar_sessao(array $chaves, $retornar = false, $mensagem = Serv_Http::HTTP_NAO_AUTORIZADO, $codigo_erro = 401) {
+        foreach($chaves as $chave) {
+            if(!isset($_SESSION[$chave])) {
+                if($retornar) {
+                    return false;
+                } else {
+                    Serv_Seg::acesso_negado($mensagem, $codigo_erro);
+                }
+            }
         }
-        if(!isset($_SESSION[Serv_Sessao::CHAVE_SESSAO])) {
-            Serv_Seg::acesso_negado($mensagem, $codigo_erro);
+        if($retornar) {
+            return true;
         }
     }
 
@@ -98,9 +104,9 @@ class Serv_Seg {
      */
     public static function validar_modulo($modulo, $retornar = false, $mensagem = Serv_Http::HTTP_NAO_AUTORIZADO, $codigo_erro = 401) {
         $valido = true;
-        if(!isset($_SESSION[Serv_Sessao::CHAVE_MODULOS])) {
+        if(!isset($_SESSION[Const_Sessao::CHAVE_MODULOS])) {
             $valido = false;
-        } else if(!in_array($modulo, $_SESSION[Serv_Sessao::CHAVE_MODULOS])) {
+        } else if(!in_array($modulo, $_SESSION[Const_Sessao::CHAVE_MODULOS])) {
             $valido = false;
         }
         if($retornar) {
@@ -129,9 +135,9 @@ class Serv_Seg {
      */
     public static function validar_licenca(array $licencas, $retornar = false, $mensagem = Serv_Http::HTTP_NAO_AUTORIZADO, $codigo_erro = 401) {
         $valido = true;
-        if(!isset($_SESSION[Serv_Sessao::CHAVE_LICENCA])) {
+        if(!isset($_SESSION[Const_Sessao::CHAVE_LICENCA])) {
             $valido = false;
-        } else if(!in_array($_SESSION[Serv_Sessao::CHAVE_LICENCA], $licencas)) {
+        } else if(!in_array($_SESSION[Const_Sessao::CHAVE_LICENCA], $licencas)) {
             $valido = false;
         }
         if($retornar) {
@@ -159,12 +165,12 @@ class Serv_Seg {
      */
     public static function validar_permissao(array $permissoes, $retornar = false, $mensagem = Serv_Http::HTTP_NAO_AUTORIZADO, $codigo_erro = 401) {
         $valido = true;
-        if(!isset($_SESSION[Serv_Sessao::CHAVE_PERMISSOES])) {
+        if(!isset($_SESSION[Const_Sessao::CHAVE_PERMISSOES])) {
             $valido = false;
         } else {
             $valido = false;
             foreach ($permissoes as $permissao) {
-                if(in_array($permissao, $_SESSION[Serv_Sessao::CHAVE_PERMISSOES])) {
+                if(in_array($permissao, $_SESSION[Const_Sessao::CHAVE_PERMISSOES])) {
                     $valido = true;
                 }
             }
@@ -174,23 +180,6 @@ class Serv_Seg {
         }
         if(!$valido) {
             Serv_Seg::acesso_negado($mensagem, $codigo_erro);
-        }
-    }
-    
-    /**
-     * Validar sessão do usuário
-     * @param type $ignorar_cidade
-     */
-    public static function validar_sessao_usuario($ignorar_cidade = false) {
-        $id_usuario = Serv_Sessao::get("id_usuario");
-        if($id_usuario == null) {
-            Serv_Seg::acesso_negado();
-        }
-        if(!$ignorar_cidade) {
-            $id_cidade = Serv_Sessao::get("id_cidade");
-            if($id_cidade == null) {
-                Serv_Seg::acesso_negado();
-            }
         }
     }
     

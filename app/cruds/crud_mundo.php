@@ -62,7 +62,7 @@ class Crud_Mundo {
      * @param type $id_mundo
      */
     public static function get_entidades($id_mundo) {
-        $sql = "SELECT * FROM mundo_entidade WHERE id_mundo = $id_mundo";
+        $sql = "SELECT * FROM mundo_entidade WHERE id_mundo = $id_mundo AND ativo = 1 AND oculto = 0";
         return Serv_Banco_Dados::executar_select($sql);
     }
     
@@ -70,10 +70,11 @@ class Crud_Mundo {
      * Listar mundos para criar cidade
      * @return type
      */
-    public static function listar_mudos_criar_cidade() {
+    public static function listar_mudos_criar_cidade($id_usuario) {
         $sql = "SELECT mundo.id, mundo.nome, COUNT(cidade.id) as qtd_cidades FROM mundo
                 LEFT JOIN cidade ON (cidade.id_mundo = mundo.id) 
                 WHERE mundo.ativo = 1
+                AND mundo.id NOT IN (SELECT cidade.id_mundo FROM cidade WHERE cidade.id_usuario = $id_usuario AND cidade.ativo = 1)
                 GROUP BY 1, 2
                 ORDER BY mundo.data_cadastro DESC";
         return Serv_Banco_Dados::executar_select($sql);

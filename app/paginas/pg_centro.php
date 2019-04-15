@@ -4,7 +4,7 @@ require_once(__DIR__ . "/../servicos/serv_importacao.php");
 Serv_Importacao::importar_modulos_php();
 
 // Validar Sessão
-Serv_Seg::validar_sessao_usuario();
+Serv_Seg::validar_sessao([Const_Sessao::CHAVE_ID_USUARIO, Const_Sessao::CHAVE_ID_CIDADE]);
 
 // Evento de Página
 Serv_Evento::pagina();

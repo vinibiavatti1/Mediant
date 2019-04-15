@@ -30,10 +30,10 @@ class Serv_Banco_Dados {
         $rs = mysqli_query($conexao, $sql);
         if(!$rs) {
             $erro = mysqli_error($conexao);
-            Serv_Log::log($erro, Serv_Log::ERRO, $sql);
+            Serv_Log::log($erro, Const_Log::ERRO, $sql);
             return $erro;
         }
-        Serv_Log::log("Execução de comando SQL (consulta)", Serv_Log::SQL, $sql);
+        Serv_Log::log("Execução de comando SQL (consulta)", Const_Log::SQL, $sql);
         return $rs;
     }
     
@@ -47,10 +47,10 @@ class Serv_Banco_Dados {
         $rs = mysqli_query($conexao, $sql);
         if(!$rs) {
             $erro = mysqli_error($conexao);
-            Serv_Log::log($erro, Serv_Log::ERRO, $sql);
+            Serv_Log::log($erro, Const_Log::ERRO, $sql);
             return $erro;
         }
-        Serv_Log::log("Execução de comando SQL (update)", Serv_Log::SQL, $sql);
+        Serv_Log::log("Execução de comando SQL (update)", Const_Log::SQL, $sql);
         return false;
     }
     
@@ -61,6 +61,24 @@ class Serv_Banco_Dados {
      */
     public static function get_dados($rs) {
         return mysqli_fetch_assoc($rs);
+    }
+    
+    /**
+     * Obter dados em array do Reuslt Set
+     * @param type $rs
+     * @return type
+     */
+    public static function get_dados_array($rs) {
+        return mysqli_fetch_array($rs);
+    }
+    
+    /**
+     * Obter quantidade de linhas do Result Set
+     * @param type $rs
+     * @return type
+     */
+    public static function get_qtd_linhas($rs) {
+        return mysqli_num_rows($rs);
     }
     
     /**

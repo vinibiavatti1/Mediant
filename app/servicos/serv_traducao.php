@@ -32,7 +32,7 @@ class Serv_Traducao {
      * Carregar dicionário
      */
     public static function carregar_dicionario() {
-        $idioma = Serv_Sessao::get(Serv_Sessao::CHAVE_IDIOMA);
+        $idioma = Serv_Sessao::get(Const_Sessao::CHAVE_IDIOMA);
         @include_once(__DIR__ . "/../traducoes/" . ((isset($idioma) && $idioma != null) ? $idioma : Config::IDIOMA) . ".php");
     }
     

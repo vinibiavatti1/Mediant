@@ -7,11 +7,11 @@ Serv_Importacao::importar_modulos_php();
 Serv_Evento::pagina();
 
 // Validar Sessão
-Serv_Seg::validar_sessao_usuario(true);
+Serv_Seg::validar_sessao([Const_Sessao::CHAVE_ID_USUARIO]);
 
 // Obter Dados
 $id_usuario = Serv_Sessao::get("id_usuario");
-$mundos = Crud_Mundo::listar_mudos_criar_cidade();
+$mundos = Crud_Mundo::listar_mudos_criar_cidade($id_usuario);
 $cidades_usuario = Crud_Cidade::get_cidades_usuario($id_usuario);
 ?>
 <html>
@@ -37,6 +37,7 @@ $cidades_usuario = Crud_Cidade::get_cidades_usuario($id_usuario);
                     <div class="shadow-sm p-3 mb-3 bg-white" style="overflow: hidden; padding-top: 0px!important; padding-bottom: 0px!important;">
                         <div class="row">
                             <div class="col col-lg-4 bg-light pt-3">
+                                <?php if(Serv_Banco_Dados::get_qtd_linhas($cidades_usuario) > 0) { ?>
                                 <b>Minhas Cidades</b>
                                 <hr class="mt-1 mb-2">
                                 <form action="../acoes/acao_cidade.php" method="POST">
@@ -47,6 +48,7 @@ $cidades_usuario = Crud_Cidade::get_cidades_usuario($id_usuario);
                                             
                                     </ul>
                                 </form>
+                                <?php } ?>
                                 <b>Criar Cidade</b>
                                 <hr class="mt-1 mb-2">
                                 <form action="../acoes/acao_cidade.php" method="POST">

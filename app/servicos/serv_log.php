@@ -10,11 +10,6 @@ Serv_Importacao::importar_modulos_php();
  * id_usuario contendo o id do mesmo.
  */
 class Serv_Log {
-    
-    const INFO = "INFO";
-    const ERRO = "ERRO";
-    const DEBUG = "DEBUG";
-    const SQL = "SQL";
 
     /**
      * Adicionar log na tabela de log
